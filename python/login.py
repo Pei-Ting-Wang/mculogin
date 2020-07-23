@@ -1,6 +1,7 @@
 import requests
 import json
 import getpass
+import jwt
 
 loginUrl = 'https://uco-mcu.primo.exlibrisgroup.com/primaws/suprimaLogin'
 queryUrl = 'https://uco-mcu.primo.exlibrisgroup.com/primaws/rest/priv/myaccount/loans?bulk=10&lang=zh-tw&offset=1&type=active'
