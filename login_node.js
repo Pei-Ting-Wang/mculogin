@@ -41,7 +41,7 @@ app.post('/', urlencodedParser, async (req, res) => {
         const [XPersist] = loginResponse.headers['set-cookie'].filter((cookie) => { return cookie.startsWith('X-Persist'); });
         console.log(XPersist)
         const queryResponse = await axios.get(queryUrl, { headers: { Authorization: `Bearer ${token}`, cookie: XPersist } })
-        console.log(queryResponse.data['data']['loans']['loan']);
+        //console.log(queryResponse.data['data']['loans']['loan']);
         res.send("<h1>"+"登入成功"+"</h1>");
     } catch (err) {
         console.log(err)
