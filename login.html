@@ -1,61 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <title>Document</title>
     <style>
-        .item {
-            margin: 10px;
+        .item{
+            margin:10px;
         }
-
-        #submit {
-            position: absolute;
-            ;
-
+        #submit{
+            position: absolute;;
+            
         }
     </style>
 </head>
-
 <body>
     <form action="/" method="POST">
         <div class="continer">
             <div class="item">
                 帳號:<input name="username" id="username" type="text" required>
-            </div>
+            </div> 
             <div class="item">
-                密碼:<input name="password" id="password" type="password" </div>
-                <button id="submit" type="submit">登入</button>
-            </div>
+                密碼:<input name="password" id="password" type="password"
+            </div> 
+            <button id="submit" type="submit">登入</button>
+        </div>
     </form>
-    <script>
-        const loginBtn = document.querySelector('#submit');
-        const username = document.querySelector('#username');
-        const password = document.querySelector('#password');
-        function initializeApp(data) {
-            var userid = data.context.userId;  //取得LINE Id
-        }
-        document.readyState(() => {
-            liff.init(data => {
-                initializeApp(data);
-            });
-
-        });
-        $(document).ready(function () {
-            liff.init(function (data) {  //初始化LIFF
-                initializeApp(data);
-            });
-
-            loginBtn.addEventListener('click', () => {
-                reserve(username.val(), password.val());
-            });
-
-        });
-
-    </script>
 </body>
 
 </html>

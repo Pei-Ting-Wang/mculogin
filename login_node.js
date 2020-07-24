@@ -19,6 +19,12 @@ app.get('/', function (req, res) {
     //使用sendFile傳送html檔
 });
 app.post('/', urlencodedParser, async (req, res) => {
+    liff.init({
+        liffId: '1654480007-RmxG99aW'
+    }).then(() => {
+        const idToken = liff.getDecodedIDToken();
+        console.log(idToken)
+    })
     user = req.body.username;
     pass = req.body.password;
     const userData = {
